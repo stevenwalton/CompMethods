@@ -1,5 +1,5 @@
 \documentclass[11pt]{article}   %Needed for every document
-\usepackage{geometry}           %Going to help get paper size right
+\usepackage[margin=0.75in]{geometry}           %Going to help get paper size right
 \geometry{letterpaper}          %Normal paper
 \usepackage{multicol}
 \usepackage{graphicx,epsfig}    %Graphics packages and pictures
@@ -10,12 +10,12 @@
 \graphicspath{ {Figures/} }
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}  %Need for pictures
 \newcommand{\ignore}[1]{} %used to make inline comments
-\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
+\definecolor{gray}{rgb}{0.1, 0.1, 0.1}
 \newcommand{\gray}[1]{\colorbox{gray}{#1}}
 \usepackage[utf8]{inputenc}
 \usepackage[most]{tcolorbox}
 \usepackage{hyperref}
-
+\usepackage{listings}
 
 \title{Lecture 2}
 \author{Steven Walton\\     %Note that we don't close until after address to keep in title format.
@@ -44,12 +44,16 @@
 \maketitle
 
 \section*{Importing A Module}
-Now that we have talked about modules, let's use them. One command that we are going to have to know is \gray{Import}.
+Now that we have talked about modules, let's use them. One command that we are going to have to know is \gray{import}.
 What this does is tells python that you care going to use the module specified.  So for example, let's create a random array.
 \begin{tcolorbox}
-   import numpy                  $\#$ We want to import the module numpy for the command random
-   s = numpy.random.random(5)    $\#$ Take special note to how this is called.  Do you have to do it this way?
+   \begin{lstlisting}
+   import numpy                  # We want to import the module numpy for 
+                                 # the command random
+   s = numpy.random.random(5)    # Take special note to how this is called.  
+                                 # Do you have to do it this way?
    print s
+   \end{lstlisting}
 \end{tcolorbox}
 
 
@@ -59,11 +63,34 @@ is that we are using the module NumPy, then using the library of Random, and the
 tiresome to write over and over, especially if we only want to be calling random from NumPy and nothing else.  We have
 a way to deal with this, and to take it one step further.  See if you can understand the following code.
 \begin{tcolorbox}
+   \begin{lstlisting}
    from numpy import random as ran
    s = ran.random(5)
    print s
+   \end{lstlisting}
 \end{tcolorbox}
+So instead of importing all of numpy, we saved some time by just importing the \href{http://docs.scipy.org/doc/numpy/reference/routines.random.html}{random library}.  We also used ``as'' to 
+shorten the name.  This can be a big help when we are using different modules.  Let's do a better example, we'll create 10 random points and plot them.  
+\begin{tcolorbox}
+   \begin{lstlisting}
+   from numpy import random as ran
+   import matplotlib.pyplt as plt      # Python's plotting module
 
+   x = ran.random(5)                   # remember it's between (0,1)
+   y = ran.random(5)
+
+   plt.plot(x,y, 'ro')                 # Extremely similar to MATLAB's 
+                                       # plotting function
+   plt.show()
+   \end{lstlisting}
+\end{tcolorbox}
+Now we see two ways to actually do the same thing, since pyplt is a library in matplotlib.  Now you may be asking what the third parameter of the plot command is ('ro').  The r means
+that it will plot in red, and the o means that it will plot circles.  The default for plt is that it will connect the points with a line and the colour will be blue.  See the manual 
+for other options, it is extremely similar to MATLAB's plotting function.
+
+\section*{Types and Arrays}
+One of the difficult things in programming is memory management.  In something like C++ you have to define things like character, float, long, boolean, or others.  Python does a lot of
+this for you.  If we want to set a variable a to 100 we can do that by \gray{a=100}.  If we want to set a to a sentence \gray{a = ``We do it like this.''}
 
 
 \end{document}
