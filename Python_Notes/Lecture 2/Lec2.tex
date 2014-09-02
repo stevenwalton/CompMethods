@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}   %Needed for every document
+\usepackage{geometry}           %Going to help get paper size right
+\geometry{letterpaper}          %Normal paper
+\usepackage{multicol}
+\usepackage{graphicx,epsfig}    %Graphics packages and pictures
+\usepackage{amssymb}            %Package for symbols
+
+\usepackage{epstopdf}
+\usepackage{color}
+\graphicspath{ {Figures/} }
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}  %Need for pictures
+\newcommand{\ignore}[1]{} %used to make inline comments
+\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
+\newcommand{\gray}[1]{\colorbox{gray}{#1}}
+\usepackage[utf8]{inputenc}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+
+
+\title{Lecture 2}
+\author{Steven Walton\\     %Note that we don't close until after address to keep in title format.
+\textit{PS 232 Computational Methods}\\
+\textit{Department of Physics}\\
+\textit{Embry-Riddle Aeronautical University}\\
+\textit{Prescott, AZ   86301}}
+
+\tcbset{
+       frame code={}
+       center title,
+       left=0pt,
+       right=0pt,
+       top=0pt,
+       bottom=0pt,
+       colback=gray!70,
+       colframe=white,
+       width=\dimexpr\textwidth\relax,
+       enlarge left by=0mm,
+       boxsep=5pt,
+       arc=0pt,outer arc=0pt,
+       }
+
+\begin{document}
+
+\maketitle
+
+\section*{Importing A Module}
+Now that we have talked about modules, let's use them. One command that we are going to have to know is \code{Import}.
+What this does is tells python that you care going to use the module specified.  So for example, let's create a random array.
+\begin{tcolorbox}
+   import numpy                  $\#$ We want to import the module numpy for the command random
+   s = numpy.random.random(5)    $\#$ Take special note to how this is called.  Do you have to do it this way?
+   print s           
+\end{tcolorbox}
+
+
+You will see here that we are outputting the value of s, which is an array of 5 random numbers between 0 and 1.
+Notice the tricky structure of how we called this this random command.  We had to use all those periods.  What this means
+is that we are using the module NumPy, then using the library of Random, and the command random in it. This can be
+tiresome to write over and over, especially if we only want to be calling random from NumPy and nothing else.  We have
+a way to deal with this, and to take it one step further.  See if you can understand the following code.
+\begin{tcolorbox}
+   from numpy import random as ran
+   s = ran.random(5)
+   print s
+\end{tcolorbox}
+
+
+
+\end{document}
