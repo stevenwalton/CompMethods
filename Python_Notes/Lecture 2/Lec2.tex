@@ -90,7 +90,48 @@ for other options, it is extremely similar to MATLAB's plotting function.
 
 \section*{Types and Arrays}
 One of the difficult things in programming is memory management.  In something like C++ you have to define things like character, float, long, boolean, or others.  Python does a lot of
-this for you.  If we want to set a variable a to 100 we can do that by \gray{a=100}.  If we want to set a to a sentence \gray{a = ``We do it like this.''}
+this for you.  If we want to set a variable a to 100 we can do that by \gray{a=100}.  If we want to set a to a sentence \gray{a = ``We do it like this.''}.  For now we won't address
+these issues because python will take care of most of this for you.
+\\
+We will address arrays though, since they will be more useful to us in a mathematical programming perspective.  Again, python will automatically take care of this type for you without
+having to worry about memory management.  Let's make a list of five numbers, from 0 to 5.  Then what we want to do is output the number three.  We can do that quite easily.
+\begin{tcolorbox}
+   \begin{lstlisting}
+   list = [0,1,2,3,4,5]    # Makes an array from 0-5
+   print list[3]           # Prints 3
+   \end{lstlisting}
+\end{tcolorbox}
+
+Pay careful attention to how this works, the listing starts at 0.  So \gray{list[0]} outputs 0, and \gray{list[5]} outputs 5.  It is important to remember that the ordering starts
+from 0, and not 1.  Now let's say that we want to create a matrix.  For this we are going to create a 3x3 matrix, then output the second row, and the the number in the third row and third 
+column. Play with this and make sure that you are able to access every part of the matrix.  
+\begin{tcolorbox}
+   \begin{lstlisting}
+   matrix = [[1,2,3],[4,5,6],[7,8,9]]  # 3x3 matrix
+   print matrix[1]                     # prints second row
+   print matrix[:][1]                  # also prints second row
+   print matrix[2][2]                  # prints 9
+   \end{lstlisting}
+\end{tcolorbox}
+For a more friendly looking version of this same thing we can use numpy's matrix command.  After importing it, there are two ways we can make the same exact matrix.
+\begin{tcolorbox}
+   \begin{lstlisting}
+   np.matrix('1 2 3; 4 5 6; 7 8 9')
+   np.matrix([[1,2,3],[4,5,6],[7,8,9]])
+   \end{lstlisting}
+\end{tcolorbox}
+You'll notice that the output of these is much friendlier looking.  We can use the same structure to accessing the elements.  There are some key differences between these two functions.
+One useful thing about the normal array in python is that we can append it and remove elements from it.  So let's add the number 1 to the end of our matrix, and then remove it.  (Calling
+it a matrix is misleading, as you'll see.  But it is close, that we can think of it this way for now).
+\begin{tcolorbox}
+   \begin{lstlisting}
+   matrix.append(1)     # [[ 1, 2, 3], [4, 5, 6], [7, 8, 9], 1]
+   matrix.pop(3)        # removes 1 (4th element)
+   \end{lstlisting}
+\end{tcolorbox}
+This is extremely useful if we need an array that needs to be updated.  We can not do this with the matrix from numpy (try it yourself).  What is nice about the matrix command is that 
+we have all the same matrix commands avaliable to us. (See \href{http://docs.scipy.org/doc/numpy/reference/generated/numpy.matrix.html}{numpy.matrix})
+
 
 
 \end{document}
