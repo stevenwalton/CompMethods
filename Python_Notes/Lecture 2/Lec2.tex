@@ -103,7 +103,7 @@ having to worry about memory management.  Let's make a list of five numbers, fro
 \end{tcolorbox}
 
 Pay careful attention to how this works, the listing starts at 0.  So \gray{list[0]} outputs 0, and \gray{list[5]} outputs 5.  It is important to remember that the ordering starts
-from 0, and not 1.  Now let's say that we want to create a matrix.  For this we are going to create a 3x3 matrix, then output the second row, and the the number in the third row and third 
+from 0, and not 1.  Now let's say that we want to create a matrix.  For this we are going to create a 3x3 matrix, then output the second row, and the number in the third row and third 
 column. Play with this and make sure that you are able to access every part of the matrix.  
 \begin{tcolorbox}
    \begin{lstlisting}
@@ -130,7 +130,16 @@ it a matrix is misleading, as you'll see.  But it is close, that we can think of
    \end{lstlisting}
 \end{tcolorbox}
 This is extremely useful if we need an array that needs to be updated.  We can not do this with the matrix from numpy (try it yourself).  What is nice about the matrix command is that 
-we have all the same matrix commands avaliable to us. (See \href{http://docs.scipy.org/doc/numpy/reference/generated/numpy.matrix.html}{numpy.matrix})
+we have all the same matrix commands available to us. (See \href{http://docs.scipy.org/doc/numpy/reference/generated/numpy.matrix.html}{numpy.matrix})
+\\
+There are two more commands that I'd like to introduce to you, which will help you with creating a range of numbers.  They are \gray{np.arange} and \gray{np.linspace}.  Linspace is the 
+same as the linspace in Matlab.  It takes three parameters: starting point, ending point, and number of points.  So if we want to generate 1000 points between 0 and 10, we would use 
+\gray{np.linspace(0,10,1000)}. This will store them into an array.  The next command is extremely similar. Arange also has three parameters but the third parameter you are specifying the
+step size.  For example \gray{np.arange(0,10,2)} outputs [0,2,4,6,8].  One thing to keep in mind is that linspace will include the end point, where arange won't.  If you want to include
+the final point in arange, remember to increase your range by one.  
+\\
+For good coding practices it is good to make the third parameter of these functions a variable.  This will help you a lot when you start using loops and need to keep these sizes the same.
+It will also mean that you will only need to change one part of your code instead of multiple places.  Remember to keep code simple.  
 
 
 
