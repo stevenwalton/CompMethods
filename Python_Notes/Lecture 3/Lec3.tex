@@ -125,4 +125,29 @@ With the same resolution this code takes 1.369 seconds. This isn't much differen
 array of 0 than it can append an array.  If you are running multiple loops or larger loops these valuable seconds will save you a lot of time.  It is important to keep your code quick and
 simple.  
 
+\subsection*{While Loops}
+Sometimes we want to have something repeat an unknown amount of times.  We can not do that with a for loop, or with an if 
+statement.  How we will implament a while loop is by starting off with \gray{while conditions:}.  Since we've been working 
+with randoms let's show an example with a random variable.  What we will do is generate a random number on the interval
+[0,1) and have it loop while the number is less then 0.5.  After the loop is finished we will print the number of times 
+we have gone through the loop.
+\begin{tcolorbox}
+   \begin{lstlisting}
+   from numpy import random as ran
+
+   a = 0                # Initialize variables
+   n = 0
+   while a < 0.5:
+      a = ran.random(1)
+      n += 1            # Increments n
+
+   print n
+   \end{lstlisting}
+\end{tcolorbox}
+The first thing you need to do is initalize the variables.  We have to do this in order for our loop to run.  Again,
+we don't have to worry about types, but we do have to tell python that we are using a variable called a and n.
+Our choice of setting it to 0 ensures that we will run through the loop at least once.  If we initialized a with
+a random variable we would not be guaranteed that we would run through the loop once.  The second concept that we 
+introduced is the incrementation technique.  \gray{n += 1} is a shortcut for \gray{n = n+1}.  We are able to use this
+shortcut with the other standard math operators.  A full list of operators can be found \href{http://www.tutorialspoint.com/python/python_basic_operators.htm}{here}.
 \end{document}
