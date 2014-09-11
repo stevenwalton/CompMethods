@@ -1,4 +1,4 @@
-CompMethods
+CompMethods PS232 ERAU
 ===========
 
 Computational Methods Solutions and lectures
