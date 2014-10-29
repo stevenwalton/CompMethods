@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}   %Needed for every document
+\usepackage[margin=0.75in]{geometry}           %Going to help get paper size right
+\geometry{letterpaper}          %Normal paper
+\usepackage{multicol}
+\usepackage{graphicx,epsfig}    %Graphics packages and pictures
+\usepackage{amssymb}            %Package for symbols
+
+\usepackage{epstopdf}
+\usepackage{color}
+\graphicspath{ {Figures/} }
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}  %Need for pictures
+\newcommand{\ignore}[1]{} %used to make inline comments
+\definecolor{gray}{rgb}{0.1, 0.1, 0.1}
+\newcommand{\gray}[1]{\colorbox{gray}{#1}}
+\usepackage[utf8]{inputenc}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\title{Lecture 4}
+\author{Steven Walton\\     %Note that we don't close until after address to keep in title format.
+\textit{PS 232 Computational Methods}\\
+\textit{Department of Physics}\\
+\textit{Embry-Riddle Aeronautical University}\\
+\textit{Prescott, AZ   86301}}
+
+\tcbset{
+       frame code={}
+       center title,
+       left=0pt,
+       right=0pt,
+       top=0pt,
+       bottom=0pt,
+       colback=gray!70,
+       colframe=white,
+       width=\dimexpr\textwidth\relax,
+       enlarge left by=0mm,
+       boxsep=5pt,
+       arc=0pt,outer arc=0pt,
+       }
+
+\begin{document}
+
+\maketitle
+
+\section*{Modules}
+Now that we know how to make our own functions we may want to make our own modules and header files.  Like when we import Numpy for a function we may want to import a custom module that contains functions that we have made.
+One thing to actually note is that every python program IS a python module.  But I'm not going to just stop here an say good job, you already did it. We do need to know at what times we have access to our modules.  There are
+only ``two'' locations that we can place it that we can run it.  It needs to either be located in the current working directory, the same as the python program you are working on, and within the directories that are listed in sys.path.
+I have included, in our function folder, a program that will output your system path for you.  But I am also including the source code here, so you can see it.
+
+\begin{tcolorbox}
+   \begin{lstlisting}
+     import sys
+     from pprint import pprint as p
+     
+     def syspath():
+         return p(sys.path)
+
+     syspath()       
+   \end{lstlisting}
+\end{tcolorbox}
+
+The reason we use pprint (pretty print) is because it shows the directories in a much nicer format than with just print.  Try print yourself to see the difference. If your modules are loaded in these paths then python will be able to
+find it.  
+
+\section*{}
+
+\end{document}
+
