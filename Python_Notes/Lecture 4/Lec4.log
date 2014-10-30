@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2014.3.23)  30 OCT 2014 01:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2014.3.23)  30 OCT 2014 02:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -595,7 +595,7 @@ Overfull \hbox (10.68848pt too wide) in paragraph at lines 28--41
 0mm, boxsep=5pt,
  []
 
-No file Lec4.aux.
+(./Lec4.aux)
 \openout1 = `Lec4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
@@ -612,6 +612,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
 LaTeX Font Info:    ... okay on input line 42.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
 LaTeX Font Info:    ... okay on input line 42.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -673,6 +674,8 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 42.
 LaTeX Info: Redefining \pageref on input line 42.
 LaTeX Info: Redefining \nameref on input line 42.
+ (./Lec4.out)
+(./Lec4.out)
 \@outlinefile=\write3
 \openout3 = `Lec4.out'.
 
@@ -795,28 +798,101 @@ Type  H <return>  for immediate help.
 l.95 \end{tcolorbox}
                     
 ? 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
+
+! LaTeX Error: Environment tcolorbox undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.107 \begin{tcolorbox}
+                       
+? 
+
+! LaTeX Error: \begin{document} ended by \end{tcolorbox}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.111 \end{tcolorbox}
+                     
+? 
+
+! LaTeX Error: Environment tcolorbox undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.119  \begin{tcolorbox}
+                        
+? 
+
+Overfull \hbox (25.25867pt too wide) in paragraph at lines 112--120
+\OT1/cmr/m/n/10.95 You will no-tice if we just out-put $\OML/cmm/m/it/10.95 Mon
+tyPython$ \OT1/cmr/m/n/10.95 that we get what we put in. But if we run $\OML/cm
+m/m/it/10.95 MontyPython\OT1/cmr/m/n/10.95 [[]\OML/cmm/m/it/10.95 Cleese[]\OT1/
+cmr/m/n/10.95 ]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--120
+
+ []
+
+
+! LaTeX Error: \begin{document} ended by \end{tcolorbox}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.127 \end{tcolorbox}
+                     
+? 
+
+! LaTeX Error: Environment tcolorbox undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.129 \begin{tcolorbox}
+                       
+? 
 [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
+Overfull \hbox (1031.506pt too wide) in paragraph at lines 132--133
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][] 
+ []
+
+
+! LaTeX Error: \begin{document} ended by \end{tcolorbox}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 \end{tcolorbox}
+                     
+? 
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 142.
+[4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 142.
  (./Lec4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
-
-
-Package rerunfilecheck Warning: File `Lec4.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Lec4.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 142.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 142.
+Package rerunfilecheck Info: File `Lec4.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 142.
  ) 
 Here is how much of TeX's memory you used:
- 7825 strings out of 493308
- 110961 string characters out of 6143616
- 207890 words of memory out of 5000000
- 11160 multiletter control sequences out of 15000+600000
+ 7846 strings out of 493308
+ 111221 string characters out of 6143616
+ 210959 words of memory out of 5000000
+ 11162 multiletter control sequences out of 15000+600000
  11084 words of font info for 42 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  42i,6n,32p,316b,1226s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -825,11 +901,12 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 r17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Lec4.pdf (3 pages, 86570 bytes).
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Lec4.pdf (4 pages, 105878 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
- 27 named destinations out of 1000 (max. 500000)
+ 101 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
+ 40 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

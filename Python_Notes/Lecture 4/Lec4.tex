@@ -101,7 +101,43 @@ save them time and frustration.\\
 There is one other thing I want to note before we move to keyword arguments.  It is that we can pass a predefined variable back into our functions.  For example if we have a variable $a=[1,2,3]$ and we execute $foo(*a)$ we will be 
 returned the numbers $(1,2,3)$
 \\
-We also mentioned the '**' operator.  These are keywords.  We have not talked about keywords yet, so let me introduce them to you now.
+We also mentioned the '**' operator. But first I have to introduce you to something, dictionaries.  No, not the dictionary that is sitting around your house (though you can always increase your vocabulary).  If you remember arrays,
+I'd be concerned if you didn't, you will recall that we can call the first element of array a by $a[0]$.  This is nice and all, but maybe we want to name things logically and be able to call them differently and not remember their
+order at all.  We can actually do this quite easily.  First thing to note, though, is that 0 is a key for a, and that it relates it to a certain value.  So let's make our own dictionary.
+\begin{tcolorbox}
+   \begin{lstlisting}
+   MontyPython={'John':123, 'Cleese':456, 'Skit':789, 'Spam':012}
+   \end{lstlisting}
+\end{tcolorbox}
+You will notice if we just output $MontyPython$ that we get what we put in.  But if we run $MontyPython['Cleese']$ we will get back $456$.  We can also run $MontyPython.keys()$ and we will get back the key words that we used.  We
+ can easily add a new key to our function, $MontyPython['Lumberjack']=9024$, or delete one by $del\hspace{.1cm}MontyPython['Spam']$  Which of course deletes or adds the associated value.  Note that dictionaries are incredibly fast, and so it is nice to look up words and values with this method.
+ We can do many things like verify if a key is in our dictionary (using the $in$ function), get length of dictionary, we can also get the associated value by get ($print MontyPython.get('Lumberjack')$), loops and all kinds of other
+ things.  I highly suggest playing around with dictionaries, especially before moving onto the next section.\\
+ \\
+ Now that we understand the keywords we can understand the $**kwargs$ that we mentioned earlier.  You may recognize that this now is a shortanded version of ``Key Word Arguments''.  So let's make a table of the skits in Monty Python
+ Flying Circus episodes.  
+ \begin{tcolorbox}
+    \begin{lstlisting}
+    import pprint as p
+    def InEpisode(titlestring, **kwargs):
+      p.pprint(titlestring)
+      for count, skit in enumerate(kwargs):
+         p.pprint('Skit {0} - {1}'.format(count,skit))
+   \end{lstlisting}
+\end{tcolorbox}
+Now we will want to make a list of the skits in the episode.
+\begin{tcolorbox}
+   \begin{lstlisting}
+   episode = ['Whither Canada?']
+   skits = {``It's Wolfgang Amadeus Mozart'':1, ``Famous deaths'':2, ``Italian Lesson'':3, ``Whizzo Butter'':4, ``'It's the Arts''':5, ``Arthur 'Two Sheds' Jackson'':6, ``Picasso/Cycling Race'':7, ``The Funniest Joke in the World'':8}
+   InEpisode(*episode,**skits)
+   \end{lstlisting}
+\end{tcolorbox}
+
+You will now notice that we got a full listing of the episode (it doesn't really look different when using pprint).  Now if you had a full listing of skits for each episode we would easily be able to output episodes with their skit
+listings.  This may seem like a difficult task, but it is actually easy because we can pull these lists from wikipedia and use the JSON data (I suggest you look this up if you are interested in pulling stuff from webpages.)  There are
+many things that we can do with these types of functions and they have a lot of different uses.  Try to be creative, programming is all about problem solving.  All I will do is give you some tools to help you along your way, but the
+creativity is left for you.
 
 \end{document}
 
