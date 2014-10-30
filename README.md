@@ -6,7 +6,9 @@ Computational Methods Solutions and lectures.  This will be updated through the 
 If you are a student of PS232 you should not be copying these solutions. 
 
 Link to class website: http://mercury.pr.erau.edu/~greta9a1/students/courses/ps232/index.html
-
+----------------------------------------------------------------------------------
+USING GITHUB via commandline and git
+----------------------------------------------------------------------------------
 If you want to clone (make an exact copy) of this repository, using git your command will be
    git clone https://github.com/stevenwalton/CompMethods
 
