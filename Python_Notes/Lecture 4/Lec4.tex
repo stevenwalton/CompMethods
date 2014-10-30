@@ -77,8 +77,9 @@ If we run foo, we will get back the parameters we put in for a,b, and c.  If we 
 (If you know C/C++, do not confuse this with a dereferencing operator).  
 \begin{tcolorbox}
    \begin{lstlisting}
-   def foo(*args):   # You do not have to name it args. But it is common to see this.
-                     # Just like it is common to see foo as a made up function.
+   def foo(*args):   # You do not have to name it args. But it is common to 
+                     # see this. Just like it is common to see foo as a 
+                     # made up function.
       return args
    \end{lstlisting}
 \end{tcolorbox}
@@ -129,8 +130,13 @@ Now we will want to make a list of the skits in the episode.
 \begin{tcolorbox}
    \begin{lstlisting}
    episode = ['Whither Canada?']
-   skits = {``It's Wolfgang Amadeus Mozart'':1, ``Famous deaths'':2, ``Italian Lesson'':3, ``Whizzo Butter'':4, ``'It's the Arts''':5, ``Arthur 'Two Sheds' Jackson'':6, ``Picasso/Cycling Race'':7, ``The Funniest Joke in the World'':8}
-   InEpisode(*episode,**skits)
+   skits = {``It's Wolfgang Amadeus Mozart'':1, ``Famous deaths'':2, 
+            ``Italian Lesson'':3, ``Whizzo Butter'':4, 
+            ``'It's the Arts''':5, ``Arthur 'Two Sheds' Jackson'':6, 
+            ``Picasso/Cycling Race'':7, 
+            ``The Funniest Joke in the World'':8}
+   # Notice that I fit to the line.  Good coding style
+   InEpisode(*episode,**skits)   # Pointing to episode and skits
    \end{lstlisting}
 \end{tcolorbox}
 
