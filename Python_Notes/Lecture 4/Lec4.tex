@@ -64,7 +64,44 @@ I have included, in our function folder, a program that will output your system 
 The reason we use pprint (pretty print) is because it shows the directories in a much nicer format than with just print.  Try print yourself to see the difference. If your modules are loaded in these paths then python will be able to
 find it.  
 
-\section*{}
+\section*{Variadic Functions}
+Sometimes we want to create functions that don't always have to take the same number of inputs.  If you are familiar with C/C++ coding this will not be too difficult to understand.  We will be using two new symbols, '**'.
+We are use to writing a function with a specific number of inputs, like the following.
+\begin{tcolorbox}
+   \begin{lstlisting}
+   def foo(a,b,c):
+      print [a,b,c]
+   \end{lstlisting}
+\end{tcolorbox}
+If we run foo, we will get back the parameters we put in for a,b, and c.  If we give more or less than three arguments then foo won't run and we will get an error. Now let's try the same type of function but with our new '*' character.
+(If you know C/C++, do not confuse this with a dereferencing operator).  
+\begin{tcolorbox}
+   \begin{lstlisting}
+   def foo(*args):   # You do not have to name it args. But it is common to see this.
+                     # Just like it is common to see foo as a made up function.
+      return args
+   \end{lstlisting}
+\end{tcolorbox}
+Now if we run foo we will get back the arguments, no matter how many you put in.  You will notice something funny though, if you only put in one argument you will get a trailing comma at the end. This is because the return is a 
+tuple and thus we have a trailing comma.  But there are some fun things that we can do with all of this.  One example is that we need a minimum number of arguments.  So let's make a return statement of this.
+\begin{tcolorbox}
+   \begin{lstlisting}
+      def foo(*args):
+         if len(args)<2:
+            return ``ERROR!!! There must be at least two arguments to foo.''
+         else:
+            return args
+   \end{lstlisting}
+\end{tcolorbox}
+This will return the error statement if we do not have two or more arguments to the function.  As you are getting more advanced with programming there is something that I want you to keep in mind.  It won't always be you that is 
+using your code.  And you should never assume that the user knows how to use the code or what to do with it.  This is why I have stressed to comment well before.  But more importantly than that is to predict this in your code.
+If our user only puts in one argument we don't want them to just get back a empty screen, we want them to know that they need at least two arguments or else they are going to get extremely frustrated and you will not hear the end of 
+it.  It will also be important for security and speed, but we won't be covering this.  Just know that you may want to not accept all commands that the user passes to the arguments.  Besides, a friendly error message is going to 
+save them time and frustration.\\
+There is one other thing I want to note before we move to keyword arguments.  It is that we can pass a predefined variable back into our functions.  For example if we have a variable $a=[1,2,3]$ and we execute $foo(*a)$ we will be 
+returned the numbers $(1,2,3)$
+\\
+We also mentioned the '**' operator.  These are keywords.  We have not talked about keywords yet, so let me introduce them to you now.
 
 \end{document}
 
