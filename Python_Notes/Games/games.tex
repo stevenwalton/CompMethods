@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}   %Needed for every document
+\usepackage[margin=0.75in]{geometry}           %Going to help get paper size right
+\geometry{letterpaper}          %Normal paper
+\usepackage{multicol}
+\usepackage{graphicx,epsfig}    %Graphics packages and pictures
+\usepackage{amssymb}            %Package for symbols
+
+\usepackage{epstopdf}
+\usepackage{color}
+\graphicspath{ {Figures/} }
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}  %Need for pictures
+\newcommand{\ignore}[1]{} %used to make inline comments
+\definecolor{gray}{rgb}{0.1, 0.1, 0.1}
+\newcommand{\gray}[1]{\colorbox{gray}{#1}}
+\usepackage[utf8]{inputenc}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\title{Simple Games}
+\author{Steven Walton\\     %Note that we don't close until after address to keep in title format.
+\textit{PS 232 Computational Methods}\\
+\textit{Department of Physics}\\
+\textit{Embry-Riddle Aeronautical University}\\
+\textit{Prescott, AZ   86301}}
+
+\tcbset{
+       frame code={}
+       center title,
+       left=0pt,
+       right=0pt,
+       top=0pt,
+       bottom=0pt,
+       colback=gray!70,
+       colframe=white,
+       width=\dimexpr\textwidth\relax,
+       enlarge left by=0mm,
+       boxsep=5pt,
+       arc=0pt,outer arc=0pt,
+       }
+
+\begin{document}
+
+\maketitle
+\section*{Simple Games}
+Python has a lot of versatility and a lot of modules that can do basically anything you want.  While it is not as fast as C/C++ (a compiled language), it is much easier to write in python.  It may at least be a good idea to 
+start here and then convert later.  First we will start with extremely simple games and then move to other games.  There is a nice online text called ``Invent With Python" that may give you a lot of use, I will be following it
+closely.
+
+\subsection*{Guess The number}
+As you can probably guess, this game is where the computer is thinking of a number and you want to figure it out.  The computer will tell you if you have guessed too high or too low.
+\\
+Stop here.  Write some pseudo code and see if you can come up with something.  If you have read the previous lectures and are taking the class you should be able to figure out this game fairly easily.  So I will just show you the 
+source code, which can be found in the github directory.
+
+\end{document}

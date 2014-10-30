@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # Filename: directionfield.py
 
+# Remember to either import * or import directionfield from this program
 from numpy import *
 from pylab import quiver
 import matplotlib.pyplot as plt
