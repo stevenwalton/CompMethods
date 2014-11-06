@@ -1,0 +1,20 @@
+Metadata-Version: 1.0
+Name: PyLevy
+Version: 0.4
+Summary: A package for calculating and fitting Levy stable distributions.
+Home-page: http://www.logarithmic.net/pfh/pylevy
+Author: Paul Harrison
+Author-email: pfh@logarithmic.net
+License: GPL
+Description: This is a package for calculation of Levy stable distributions
+        (probability density function and cumulative density function) and for
+        fitting these distributions to data.
+        
+        It operates by interpolating values from a table, as direct computation
+        of these distributions requires a lengthy numerical integration. This
+        interpolation scheme allows fast fitting of Levy stable distributions
+        to data using the Maximum Likelihood technique.
+        
+        Does not support alpha values less than 0.5.
+        
+Platform: UNKNOWN
