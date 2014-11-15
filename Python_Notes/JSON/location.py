@@ -12,8 +12,9 @@ print "Do not forget the spaces and dash"
 print ""
 print ""
 # Let's gather the point of interest
-
+# Since we want to be able to run the code multiple times we want to include it in an infinite loop
 while True:
+    # We do want to only accept values that work, so we are going to use error handling.  We try to do part of code, but if it doesn't work, then we are going to catch the error with the except function and display an error message.
     try:
         name = raw_input("What location would you like to view?: ").lower()
         # Unfortunately we need turn human typing into something the computer can understand.  We want to convert our name into a url address for the Google API
@@ -35,20 +36,26 @@ while True:
         # If there is more than one location with the name the user specified we want to output the different places and address of them for the user to find
         if len(jsonResponse['results']) > 1:
             print "There are " + str(len(jsonResponse['results'])) + " locations with that name"
+            # We want to make sure that the user is still doing what they are suppose to, so let's check for errors here
             try:
                 response = raw_input("Would you like to display them all?(y/n): ").lower()
                 if response == 'y':
                     print "The Locations are: "
+                    # We want to display the locations so that the user can know what locations have the same name
                     for x in range(0,len(jsonResponse['results'])):
                             pprint(str(x) + "     " + str(jsonResponse['results'][x]['formatted_address']))
-        
-                    res = input("Pick the numerical value of the location you'd like: ")
-        
+                    try:
+                        res = input("Pick the numerical value of the location you'd like: ")
+                    except SyntaxError:
+                        # In a professional program you might not want to be sassy and give better error messages
+                        print "My tiny brain can't understand what you're trying to do"
+
                 else:
                     # If the user isn't going to choose a location, the program will be sassy
                     print "If you're not going to choose, I'm just going to pick the first location.  What are you going to do about it? That's right, nothing."
             
             except UnicodeEncodeError:
+                # If you type "Google" into "Google" you can break the internet.  This is no laughing matter.  Don't even try it as a joke.
                 print "JEN!!! DID YOU TYPE GOOGLE INTO GOOGLE?!  We told you that you can break the internet doing that!!!"
 
         # Read below why we do this
