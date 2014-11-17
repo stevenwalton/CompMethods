@@ -7,3 +7,6 @@ json
 urllib2
 
 Data Pretty Printer (pprint)
+
+---------------------
+If you're using Linux and the image is not showing you need to also install imagemagick

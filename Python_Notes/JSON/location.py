@@ -87,7 +87,7 @@ while True:
                 elif response == 'name':
                     pprint(str(jsonResponse['results'][res]['address_components'][0]['long_name']))
                 response = raw_input("What would you like to display? (Q to quit): ").lower()
-        
+# We'll also give the user some control over the map.  Like defining the size of the image and how far to zoom        
         response = raw_input("Would you like to define the map size? Default is 800x800. (y/n): ").lower()
         if response == 'y':
             size = raw_input("Please enter size in format num1xnum2.  EX 800x800: ")
