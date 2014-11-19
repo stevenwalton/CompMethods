@@ -76,12 +76,13 @@ what JSON looks like, here is an example:
 \end{tcolorbox}
 If you remember back to when we talked about keywords and dictionaries, lecture 4, this will look extremely similar to you.
 \\
-Now you are probably asking why you should know this, and what's useful for.  Let's pretend that we want to get something off of the internet, text, data, whatever.  We use JSON.  The standard is used so that we can extract the needed
-information to any language that we want.  We can also do the opposite and output data into JSON notation.  This is really great for doing things like *cough* outputting data from a telescope array to the internet *cough*. (Though that person might want to use a relational database and json to output the data to the user on the client side).
+Now you are probably asking why you should know this, and what's useful for.  Let's pretend that we want to get something off of the internet, text, data, whatever.  We use JSON. It is the javascript replacement to xml.  The standard is used so that we can extract the needed
+information to any language that we want.  We can also do the opposite and output data into JSON notation.  This is really great if you are trying to create a pseudo database.  If you are just going to dump the data right away
+then this is a great thing to use.  It is also used a lot for APIs (aka, they aren't going to store data).
 If you are writing to the web you should always be using JSON format, and if you are reading from the web you should know how JSON works.  A lot of sites use JSON, including wikipedia.  So if you are interacting with websites in 
 any way, this is important to know. I will also suggest that if you are interested in websites and python that you look into the django module (the d is silent).
 
-\section*{Some simple examples}
+\subsection*{Some simple examples}
 Let's just dive right in and try some simple output with json.  This is a great thing to do from a command line interpreter.  I suggest this for practice over using the compiler.
 \begin{tcolorbox}
    \begin{lstlisting}
@@ -146,5 +147,40 @@ Have fun with the program.\\
 You can make the program a lot simpler if you just want to display the map.  See if you reduce it to do just that.  You should be able to do this in 10 
 lines (not including the imports and error handling).  \\
 
+\section*{Webscraping}
+Interacting with webpages is a fun and interesting part of programming.  You can get a program to do all kinds of stuff with webpages; from entering forum data, uploading/downloading files, finding links/emails, or interact with a
+webpage any way you want.  Only use this power for good.
+\\
+The simplest example of webscraping is to show you how to gather all the links on a page.  Let's look at all the links that nytimes.com has.
+\begin{tcolorbox}
+   \begin{lstlisting}
+   import requests
+   from bs4 import BeautifulSoup as BS
 
+   url = http://nytimes.com      # URL to scrape
+   response = requests.get(url)  # Get html response
+   data = response.text          # Gets everything in text. Print this
+   soup = BS(data)               # Lets BS read the html data
+
+   for links in soup.find_all('a'):
+      print link.get('href')     # Finds hyper links and parses them to 
+                                 # only the address
+   \end{lstlisting}
+\end{tcolorbox}
+We can also use urllib2 to open the page and then use the read to pass it to BS like we did before, but I thought I'd introduce you to another way of doing this.\\
+A challenge I'll give the reader is to store these links into an array and follow through the links recursively.  You'll have to use a loop to append the url's and then follow and collect more.  Be careful with what website you test
+this on because some might generate you an endless list.  Remove all doubles so you don't repeat and loop forever.  You may also find internal links and that some links are just relative paths.  Therein lies the challenge :)
+\\
+\subsection*{BeautifulSoup}
+With our small intro to webscraping you are probably most curious about BeautifulSoup.  The purpose of BeautifulSoup is to parse html data, it will even deal with tags that aren't closed!  You can ask BeautifulSoup to find all the
+links, like we did above, all the classes, whatever you please.  Working with BeautifulSoup actually requires you to know a little about html.  Unfortunately I'm not going to go into that for you, but I'll give you enough to use 
+BeautifulSoup.\\
+
+\begin{centering}
+   \includegraphics[scale=0.5]{nytimes.png}
+\end{centering}
+\\
+Above we can see a small clipping of the New York Time's home page source code.  In our previous example we looked for 'a' tags and parsed out the href part of the code to get the link (marked with red).  You can also see that I 
+highlighted the header in blue and the classes with green.  We can gather all this data and more with BeautifulSoup.  One cool thing we can do with this is gather all the emails listed on a site.  These are usually formatted
+<a href=``mailto:username@domain.com''>
 \end{document}
