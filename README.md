@@ -22,6 +22,7 @@ Lectures
 Other Lectures
 -----------------
 Games - Introduction to games and graphics
+
 Web Scraping - Introduction to working with webpages
 
 
