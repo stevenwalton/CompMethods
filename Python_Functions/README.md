@@ -1,6 +1,7 @@
 Useful Python Functions and Modules
 =========================
 Directionfield.py is a module created to generate a vector field.  This is analogous to the Directionfiled for MATLAB that was created by Andri Gretarsson
+
 funcollection.py was created as a module for competitive games, as well as predator and prey models.
 
 syspath.py is a useful function that will show the user what paths they can install modules in that will be natively read.  See Lecture 4
