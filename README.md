@@ -7,24 +7,6 @@ If you are a student of PS232 you should not be copying these solutions.
 
 Link to class website: http://mercury.pr.erau.edu/~greta9a1/students/courses/ps232/index.html
 
-Lectures
-----------------------------------------------------------------------------------
-1) Lecture 1 - An Introduction to Python2.7
-
-2) Lecture 2 - Modules and Arrays
-
-3) Lecture 3 - Loops and Conditional Statements
-
-4) Lecture 4 - Variadic Functions and Definitions
-
-5) Classes   - Class Structures
-
-Other Lectures
------------------
-Games - Introduction to games and graphics
-
-Web Scraping - Introduction to working with webpages
-
 
 USING GITHUB via commandline and git
 ----------------------------------------------------------------------------------
